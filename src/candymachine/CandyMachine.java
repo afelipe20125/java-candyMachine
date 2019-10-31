@@ -19,13 +19,13 @@ public class CandyMachine {
         System.out.println("Welcome to CHS's Comptuer Candy Machine!");
         System.out.println("All candy provided is virtual.");
         System.out.println("How much money do you have?");
-        double x = kb.nextDouble();
+        double money = kb.nextDouble();
        
         // Happy Coding!
         double cost = 0.0;
         cost += displayChoices();
         System.out.println(cost);
-        dispense();
+        dispense(money, cost);
     }
     
     public static double displayChoices(){
@@ -67,7 +67,16 @@ public class CandyMachine {
 }
    public static void dispense(double moneyInserted, double candyCost){
        
-   }
+       if (moneyInserted >= candyCost){
+           System.out.println("Thanks for your purchase, your change is: ");
+           System.out.print(moneyInserted-candyCost);
+       }
+       else
+       {
+           System.out.println("You don't have enough money!");
+       }
+       
+       }
     
 }
           
